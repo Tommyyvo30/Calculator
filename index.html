@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="screen">
+        <div class="previous-value"></div>
+
+        <div class="screen-text">0</div>
+      </div>
+
+      <div class="calc-buttons">
+        <!-- Additional modifications -->
+        <div class="btn-row">
+          <button class="calc-btn special-btn clear-btn">AC</button>
+          <button class="calc-btn special-btn change-sign-btn">+/-</button>
+          <button class="calc-btn special-btn backspace-btn">&larr;</button>
+          <button class="calc-btn operator-btn" data-operator="/">
+            &divide;
+          </button>
+        </div>
+        <div class="btn-row">
+          <button class="calc-btn" data-number="7">7</button>
+          <button class="calc-btn" data-number="8">8</button>
+          <button class="calc-btn" data-number="9">9</button>
+          <button class="calc-btn operator-btn" data-operator="*">
+            &times;
+          </button>
+        </div>
+        <div class="btn-row">
+          <button class="calc-btn" data-number="4">4</button>
+          <button class="calc-btn" data-number="5">5</button>
+          <button class="calc-btn" data-number="6">6</button>
+          <button class="calc-btn operator-btn" data-operator="-">
+            &minus;
+          </button>
+        </div>
+        <div class="btn-row">
+          <button class="calc-btn" data-number="1">1</button>
+          <button class="calc-btn" data-number="2">2</button>
+          <button class="calc-btn" data-number="3">3</button>
+          <button class="calc-btn operator-btn" data-operator="+">
+            &plus;
+          </button>
+        </div>
+        <div class="btn-row">
+          <button class="calc-btn" data-number="0">0</button>
+          <button class="calc-btn decimal-btn">.</button>
+          <button class="calc-btn operator-btn equals-btn">&equals;</button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>Copyright © Thomas Vo 2023</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

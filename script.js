@@ -64,27 +64,27 @@ function handleNumberClick(event) {
 
 function handleOperatorClick(event) {
   const newOperator = event.target.dataset.operator;
-  if (operator !== null && secondNum !== null) {
+
+  if (firstNum === null) {
+    firstNum = parseFloat(display.textContent);
+  } else if (operator !== null) {
+    secondNum = parseFloat(display.textContent);
     const result = operate(operator, firstNum, secondNum);
-    previousValue = `${firstNum} ${operator} ${secondNum}`;
-    document.querySelector(".previous-value").textContent = previousValue;
     display.textContent = result;
     firstNum = result;
-    operator = newOperator;
-    secondNum = null;
-  } else {
-    firstNum = parseFloat(display.textContent);
-    operator = newOperator;
-    if (previousValue === null) {
-      previousValue = `${firstNum} ${operator}`;
-    } else {
-      previousValue = `${previousValue} ${secondNum} ${operator}`;
-    }
-    document.querySelector(".previous-value").textContent = previousValue;
   }
-  isNewOperand = true;
-}
 
+  operator = newOperator;
+  isNewOperand = true;
+
+  if (secondNum === null) {
+    previousValue = `${firstNum} ${operator}`;
+  } else {
+    previousValue = `${firstNum} ${operator} ${secondNum}`;
+  }
+  document.querySelector(".previous-value").textContent = previousValue;
+  secondNum = null;
+}
 function handleEqualsClick() {
   if (operator !== null && secondNum === null) {
     secondNum = parseFloat(display.textContent);

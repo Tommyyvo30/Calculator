@@ -34,6 +34,8 @@ function operate(operator, num1, num2) {
 }
 
 const display = document.querySelector(".screen-text");
+const prev = document.querySelector(".previous-value");
+
 let firstNum = null;
 let operator = null;
 let secondNum = null;
@@ -41,6 +43,7 @@ let isNewOperand = true;
 let previousValue = null;
 
 function clear() {
+  prev.textContent = "";
   display.textContent = "0";
   firstNum = null;
   operator = null;
